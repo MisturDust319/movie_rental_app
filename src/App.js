@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-import {LoginScreen} from './components/LoginScreen.js';
+import { LoginScreen } from './components/LoginScreen.js';
+import { AddUserScreen } from './components/AddUserScreen.js';
 
 class App extends Component {
 
@@ -11,6 +12,7 @@ class App extends Component {
     
     this.state = {
       username: "",
+      newUsername: "",
       isLoggedIn: false,
     }
 
@@ -18,6 +20,7 @@ class App extends Component {
     this.handleChange = this.handleChange.bind(this);
     this.getValue = this.getValue.bind(this);
     this.login = this.login.bind(this);
+    this.addUser = this.addUser.bind(this);
   }
 
   handleChange = (name, value) => {
@@ -34,12 +37,21 @@ class App extends Component {
     })
   }
 
+  addUser = () => {
+    this.setState({
+      username: this.state.newUsername
+    })
+  }
+
   render() {
     return (
       <div className="App">
         <LoginScreen handleChange={this.handleChange}
-        getValue={this.getValue}
-        login={this.login}/>
+          getValue={this.getValue}
+          login={this.login}/>
+        <AddUserScreen handleChange={this.handleChange}
+          getValue={this.getValue}
+          login={this.addUser}/>
       </div>
     );
   }
