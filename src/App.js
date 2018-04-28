@@ -11,11 +11,13 @@ class App extends Component {
     
     this.state = {
       username: "",
+      isLoggedIn: false,
     }
 
     // bind functions
     this.handleChange = this.handleChange.bind(this);
     this.getValue = this.getValue.bind(this);
+    this.login = this.login.bind(this);
   }
 
   handleChange = (name, value) => {
@@ -26,13 +28,18 @@ class App extends Component {
     return this.state[value];
   }
 
+  login = () => {
+    this.setState({
+      isLoggedIn: true,
+    })
+  }
+
   render() {
     return (
       <div className="App">
-        <section>
         <LoginScreen handleChange={this.handleChange}
-        getValue={this.getValue}/>
-        </section>
+        getValue={this.getValue}
+        login={this.login}/>
       </div>
     );
   }
