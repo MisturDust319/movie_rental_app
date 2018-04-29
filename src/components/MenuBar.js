@@ -17,12 +17,25 @@ const searchOptions = [
 ];
 
 function MenuBar(props) {
+    let toggleText = () => {
+        if(props.getValue("showFilterPanel")) {
+            return "Hide Filters";
+        }
+        else {
+            return "Show Filters";
+        }
+    }
+
     return (
         <header>
             <h1>RENTR</h1>
-            <Input type='text' label='Search' name='query' value={props.getValue("query")} onChange={props.handleChange.bind(this, 'query')} maxLength={30} />
-            <Dropdown auto onChange={props.handleChange.bind(this, 'searchBy')} source={searchOptions} value={props.getValue('searchBy')} />
-            <Button label="Search..." onClick={props.searchMovies} raised/>
+            <span>
+                <Input type='text' label='Search' name='query' value={props.getValue("query")} onChange={props.handleChange.bind(this, 'query')} maxLength={30} />
+                <Dropdown auto onChange={props.handleChange.bind(this, 'searchBy')} source={searchOptions} value={props.getValue('searchBy')} />
+                <Button label="Search..." onClick={props.searchMovies} raised/>
+                <Button label={toggleText()} onClick={props.showFilters} raised />
+            </span>
+            <Button label="Logout" onClick={props.logout} raised />
         </header>
     );
 }
@@ -31,6 +44,7 @@ MenuBar.PropTypes = {
     getValue: PropTypes.func.isRequired,
     handleChange: PropTypes.func.isRequired,
     searchMovies: PropTypes.func.isRequired,
+    logout: PropTypes.func.isRequired
 }
 
 export { MenuBar };

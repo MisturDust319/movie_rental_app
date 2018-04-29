@@ -17,6 +17,7 @@ class App extends Component {
       isLoggedIn: false,
       query: "",
       searchBy: "title",
+      showFilterPanel: false,
     }
 
     // bind functions
@@ -25,6 +26,7 @@ class App extends Component {
     this.login = this.login.bind(this);
     this.addUser = this.addUser.bind(this);
     this.searchMovies = this.searchMovies.bind(this);
+    this.showFilters = this.showFilters.bind(this);
   }
 
   handleChange = (name, value) => {
@@ -41,6 +43,12 @@ class App extends Component {
     })
   }
 
+  logout = () => {
+    this.setState({
+      isLoggedIn: false,
+    })
+  }
+
   addUser = () => {
     this.setState({
       username: this.state.newUsername
@@ -51,12 +59,21 @@ class App extends Component {
     alert(`This is a stub: Search ${this.state.query} By ${this.state.searchBy}`);
   }
 
+  showFilters = () => {
+    alert("This be a stub to show the olde fylters");
+    this.setState({
+      showFilterPanel: !this.state.showFilterPanel,
+    })
+  }
+
   render() {
     return (
       <div className="App">
         <MenuBar handleChange={this.handleChange}
           getValue={this.getValue} 
-          searchMovies={this.searchMovies}/>
+          searchMovies={this.searchMovies}
+          logout={this.logout}
+          showFilters={this.showFilters}/>
         <LoginScreen handleChange={this.handleChange}
           getValue={this.getValue}
           login={this.login}/>
