@@ -4,6 +4,7 @@ import './App.css';
 
 import { LoginScreen } from './components/LoginScreen.js';
 import { AddUserScreen } from './components/AddUserScreen.js';
+import { MenuBar } from './components/MenuBar.js';
 
 class App extends Component {
 
@@ -14,6 +15,8 @@ class App extends Component {
       username: "",
       newUsername: "",
       isLoggedIn: false,
+      query: "",
+      searchBy: "title",
     }
 
     // bind functions
@@ -21,6 +24,7 @@ class App extends Component {
     this.getValue = this.getValue.bind(this);
     this.login = this.login.bind(this);
     this.addUser = this.addUser.bind(this);
+    this.searchMovies = this.searchMovies.bind(this);
   }
 
   handleChange = (name, value) => {
@@ -43,9 +47,16 @@ class App extends Component {
     })
   }
 
+  searchMovies = () => {
+    alert(`This is a stub: Search ${this.state.query} By ${this.state.searchBy}`);
+  }
+
   render() {
     return (
       <div className="App">
+        <MenuBar handleChange={this.handleChange}
+          getValue={this.getValue} 
+          searchMovies={this.searchMovies}/>
         <LoginScreen handleChange={this.handleChange}
           getValue={this.getValue}
           login={this.login}/>
