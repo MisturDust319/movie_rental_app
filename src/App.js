@@ -5,6 +5,7 @@ import './App.css';
 import { LoginScreen } from './components/LoginScreen.js';
 import { AddUserScreen } from './components/AddUserScreen.js';
 import { MenuBar } from './components/MenuBar.js';
+import { MovieCard } from './components/MovieCard.js';
 
 class App extends Component {
 
@@ -69,6 +70,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <MovieCard />
         <MenuBar handleChange={this.handleChange}
           getValue={this.getValue} 
           searchMovies={this.searchMovies}
