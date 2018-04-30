@@ -36,6 +36,12 @@
     float: left;
 }
 
+.menuBar .logoutButton {
+    display: inline;
+    
+    float: right;
+}
+
 .menuBar h1 {
     width: 13%;
     display: inline;
@@ -62,16 +68,18 @@
     float: left;
 }
 
-.logoutButton {
-    margin-left: 39%;
-    display: inline;
-    
-    float: right;
-}
-
 /* Filter panel */
 
 .filterPanel {
     width: 25%;
     padding: 0 20px;
+}
+
+/* Movie Card */
+
+.movieCard {
+    width: 40%;
+    margin: 10px 5%;
+    display: inline;
+    float: right;
 }

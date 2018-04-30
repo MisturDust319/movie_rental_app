@@ -93,11 +93,23 @@ class App extends Component {
     if(loggedIn) {
       return (
         <div>
+          <div>
           <MenuBar handleChange={this.handleChange}
             getValue={this.getValue} 
             searchMovies={this.searchMovies}
             logout={this.logout}
             showFilters={this.showFilters}/>
+          </div>
+        <div>
+          <MovieCard id="12"
+            description="Romani ite domum"
+            title="Life of Brian"
+            toggleCheckout={this.toggleButton}/>
+          <MovieCard id="13"
+            description="Louie Louie"
+            title="Animal House"
+            toggleCheckout={this.toggleButton}/>
+        </div>
         <Checkout getValue={this.getValue}
           toggleCheckout={this.toggleButton}
           handleChange={this.handleChange}/>
@@ -105,10 +117,6 @@ class App extends Component {
         toggleFilterPanel={this.showFilters}
         handleChange={this.handleChange}
         toggleButton={this.toggleButton}/>
-        <MovieCard id="12"
-          description="lorem ipsum"
-          title="Some Movie"
-          toggleCheckout={this.toggleButton}/>
         </div>
       )
     } else {

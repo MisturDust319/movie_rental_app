@@ -12,7 +12,8 @@ import CardActions from 'react-toolbox/lib/card/CardActions';
 
 function MovieCard(props) {
     return (
-        <Card key={props.id} style={{width: "80%"}}>
+        <Card key={props.id}
+        className='movieCard'>
             <CardMedia aspectRatio="wide" image="https://placeimg.com/800/450/nature" />
             <CardTitle title={props.title} />
             <CardText>{props.description}</CardText>
