@@ -106,12 +106,15 @@ class App extends Component {
           searchMovies={this.searchMovies}
           logout={this.logout}
           showFilters={this.showFilters}/>
-        <LoginScreen handleChange={this.handleChange}
-          getValue={this.getValue}
-          login={this.login}/>
-        <AddUserScreen handleChange={this.handleChange}
-          getValue={this.getValue}
-          login={this.addUser}/>
+        <div className="loginScreen">
+          <h1>RENTR</h1>
+          <LoginScreen handleChange={this.handleChange}
+            getValue={this.getValue}
+            login={this.login}/>
+          <AddUserScreen handleChange={this.handleChange}
+            getValue={this.getValue}
+            login={this.addUser}/>
+        </div>
       </div>
     );
   }

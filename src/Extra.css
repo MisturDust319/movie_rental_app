@@ -1,0 +1,19 @@
+/* Login Screen */
+
+/* Add User Panel */
+
+.addUserSection {
+    display: inline;
+    float: left;
+    width: 45%;
+    padding: 0 2%;
+}
+
+/* Login Panel */
+
+.loginSection {
+    display: inline;
+    float: left;
+    width: 45%;
+    padding: 0 2%;
+}

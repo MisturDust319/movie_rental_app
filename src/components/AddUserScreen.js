@@ -7,7 +7,7 @@ import Button from 'react-toolbox/lib/button/Button';
 
 function AddUserScreen(props) {
     return (
-        <section>
+        <section className="addUserSection">
             <h1>Create New Account</h1>
             <Input type='email' label='E-Mail' name='email' value={props.getValue("email")} onChange={props.handleChange.bind(this, 'email')} maxLength={30} />
             <Input type='text' label='Username' name='newUsername' value={props.getValue("newUsername")} onChange={props.handleChange.bind(this, 'newUsername')} maxsLength={30} />
