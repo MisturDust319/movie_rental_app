@@ -17,7 +17,7 @@ function MovieCard(props) {
             <CardTitle title={props.title} />
             <CardText>{props.description}</CardText>
             <CardActions>
-                <Button label="Checkout" onClick={props.onClick} />
+                <Button label="Checkout" onClick={props.toggleCheckout.bind(this, "showCheckout")} />
             </CardActions>
         </Card>
     );
@@ -27,6 +27,7 @@ MovieCard.PropTypes = {
     title: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     id: PropTypes.string.isRequired,
+    toggleCheckout: PropTypes.func.isRequired,
 }
 
 export { MovieCard };

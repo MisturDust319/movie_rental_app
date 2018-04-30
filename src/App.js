@@ -7,6 +7,7 @@ import { AddUserScreen } from './components/AddUserScreen.js';
 import { MenuBar } from './components/MenuBar.js';
 import { MovieCard } from './components/MovieCard.js';
 import FilterPanel from './components/FilterPanel';
+import Checkout from './components/Checkout';
 
 class App extends Component {
 
@@ -28,7 +29,9 @@ class App extends Component {
       maxDecade: 2018,
       maxPrice: 20,
       minRating: 0.5,
-      maxRating: 5
+      maxRating: 5,
+      showCheckout: false,
+      cardInfo: "",
     }
 
     // bind functions
@@ -87,11 +90,17 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <Checkout getValue={this.getValue}
+          toggleCheckout={this.toggleButton}
+          handleChange={this.handleChange}/>
         <FilterPanel getValue={this.getValue}
         toggleFilterPanel={this.showFilters}
         handleChange={this.handleChange}
         toggleButton={this.toggleButton}/>
-        <MovieCard />
+        <MovieCard id="12"
+          description="lorem ipsum"
+          title="Some Movie"
+          toggleCheckout={this.toggleButton}/>
         <MenuBar handleChange={this.handleChange}
           getValue={this.getValue} 
           searchMovies={this.searchMovies}
