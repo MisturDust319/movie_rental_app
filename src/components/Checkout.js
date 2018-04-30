@@ -16,8 +16,9 @@ function Checkout(props) {
         <Drawer label="Checkout"
             active={props.getValue("showCheckout")}
             onEscKeyDown={closeDialog}
-            onOverlayClick={closeDialog} >
-            <p>Lorem Ipsum</p>
+            onOverlayClick={closeDialog}
+        className='checkoutPanel'>
+            <h2>Lorem Ipsum</h2>
             <p>Please input your charge card number</p>
             <Input type='text'
                 label='Card info' name='cardInfo'

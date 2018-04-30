@@ -83,3 +83,9 @@
     display: inline;
     float: right;
 }
+
+/* Checkout Panel */
+.checkoutPanel {
+    width: 40%;
+    padding: 20px;
+}
