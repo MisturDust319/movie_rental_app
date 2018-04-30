@@ -18,7 +18,8 @@ function FilterPanel(props) {
     }
 
     return (
-        <Drawer active={props.getValue("showFilterPanel")} onOverlayClick={props.toggleFilterPanel}>
+        <Drawer active={props.getValue("showFilterPanel")} onOverlayClick={props.toggleFilterPanel}
+        className='filterPanel'>
             <div>
                 <h3>Filter By Decade</h3>
                 <Button label={toggleText("filterByDecade")} onClick={props.toggleButton.bind(this, "filterByDecade")} raised />

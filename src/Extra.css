@@ -68,3 +68,10 @@
     
     float: right;
 }
+
+/* Filter panel */
+
+.filterPanel {
+    width: 25%;
+    padding: 0 20px;
+}

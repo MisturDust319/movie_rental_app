@@ -17,7 +17,7 @@ class App extends Component {
     this.state = {
       username: "",
       newUsername: "",
-      isLoggedIn: false,
+      isLoggedIn: true,
       query: "",
       searchBy: "title",
       showFilterPanel: false,
@@ -42,6 +42,7 @@ class App extends Component {
     this.searchMovies = this.searchMovies.bind(this);
     this.showFilters = this.showFilters.bind(this);
     this.toggleButton = this.toggleButton.bind(this);
+    this.renderApp = this.renderApp.bind(this);
   }
 
   handleChange = (name, value) => {
@@ -66,7 +67,8 @@ class App extends Component {
 
   addUser = () => {
     this.setState({
-      username: this.state.newUsername
+      username: this.state.newUsername,
+      isLoggedIn: true,
     })
   }
 
@@ -87,10 +89,11 @@ class App extends Component {
     this.setState(newState);
   }
 
-  render() {
-    return (
-      <div className="App">
-        <MenuBar handleChange={this.handleChange}
+  renderApp = (loggedIn) => {
+    if(loggedIn) {
+      return (
+        <div>
+          <MenuBar handleChange={this.handleChange}
             getValue={this.getValue} 
             searchMovies={this.searchMovies}
             logout={this.logout}
@@ -106,7 +109,12 @@ class App extends Component {
           description="lorem ipsum"
           title="Some Movie"
           toggleCheckout={this.toggleButton}/>
-        <div className="loginScreen">
+        </div>
+      )
+    } else {
+      return (
+        <div className="App">
+          <div className="loginScreen">
           <h1>RENTR</h1>
           <LoginScreen handleChange={this.handleChange}
             getValue={this.getValue}
@@ -114,9 +122,17 @@ class App extends Component {
           <AddUserScreen handleChange={this.handleChange}
             getValue={this.getValue}
             login={this.addUser}/>
+          </div>
         </div>
-      </div>
-    );
+      )
+    }
+  }
+
+  render() {
+    return ( 
+      <div>
+      {this.renderApp(this.state.isLoggedIn)}
+      </div>)
   }
 }
 
