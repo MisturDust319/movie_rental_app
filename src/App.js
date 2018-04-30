@@ -6,6 +6,7 @@ import { LoginScreen } from './components/LoginScreen.js';
 import { AddUserScreen } from './components/AddUserScreen.js';
 import { MenuBar } from './components/MenuBar.js';
 import { MovieCard } from './components/MovieCard.js';
+import FilterPanel from './components/FilterPanel';
 
 class App extends Component {
 
@@ -19,6 +20,15 @@ class App extends Component {
       query: "",
       searchBy: "title",
       showFilterPanel: false,
+      decadeSlider: 0,
+      filterByDecade: false,
+      filterByPrice: false,
+      filterByRating: false,
+      minDecade: 1900,
+      maxDecade: 2018,
+      maxPrice: 20,
+      minRating: 0.5,
+      maxRating: 5
     }
 
     // bind functions
@@ -28,6 +38,7 @@ class App extends Component {
     this.addUser = this.addUser.bind(this);
     this.searchMovies = this.searchMovies.bind(this);
     this.showFilters = this.showFilters.bind(this);
+    this.toggleButton = this.toggleButton.bind(this);
   }
 
   handleChange = (name, value) => {
@@ -61,15 +72,25 @@ class App extends Component {
   }
 
   showFilters = () => {
-    alert("This be a stub to show the olde fylters");
     this.setState({
       showFilterPanel: !this.state.showFilterPanel,
     })
   }
 
+  toggleButton = (button) => {
+    let newState = {};
+    newState[button] = !this.state[button];
+    
+    this.setState(newState);
+  }
+
   render() {
     return (
       <div className="App">
+        <FilterPanel getValue={this.getValue}
+        toggleFilterPanel={this.showFilters}
+        handleChange={this.handleChange}
+        toggleButton={this.toggleButton}/>
         <MovieCard />
         <MenuBar handleChange={this.handleChange}
           getValue={this.getValue} 
