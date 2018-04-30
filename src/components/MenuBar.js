@@ -27,15 +27,19 @@ function MenuBar(props) {
     }
 
     return (
-        <header>
+        <header className='menuBar'>
             <h1>RENTR</h1>
-            <span>
-                <Input type='text' label='Search' name='query' value={props.getValue("query")} onChange={props.handleChange.bind(this, 'query')} maxLength={30} />
-                <Dropdown auto onChange={props.handleChange.bind(this, 'searchBy')} source={searchOptions} value={props.getValue('searchBy')} />
-                <Button label="Search..." onClick={props.searchMovies} raised/>
+            <span class='search'>
+                <Input type='text' label='Search' name='query' value={props.getValue("query")} onChange={props.handleChange.bind(this, 'query')} maxLength={30} 
+                className='searchBar'/>
+                <Dropdown auto onChange={props.handleChange.bind(this, 'searchBy')} source={searchOptions} value={props.getValue('searchBy')}
+                className='searchBy'/>
+                <Button label="Search..." onClick={props.searchMovies} raised
+                className='searchButton'/>
                 <Button label={toggleText()} onClick={props.showFilters} raised />
             </span>
-            <Button label="Logout" onClick={props.logout} raised />
+            <Button label="Logout" onClick={props.logout} raised 
+            className='logoutButton'/>
         </header>
     );
 }

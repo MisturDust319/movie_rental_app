@@ -90,6 +90,11 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <MenuBar handleChange={this.handleChange}
+            getValue={this.getValue} 
+            searchMovies={this.searchMovies}
+            logout={this.logout}
+            showFilters={this.showFilters}/>
         <Checkout getValue={this.getValue}
           toggleCheckout={this.toggleButton}
           handleChange={this.handleChange}/>
@@ -101,11 +106,6 @@ class App extends Component {
           description="lorem ipsum"
           title="Some Movie"
           toggleCheckout={this.toggleButton}/>
-        <MenuBar handleChange={this.handleChange}
-          getValue={this.getValue} 
-          searchMovies={this.searchMovies}
-          logout={this.logout}
-          showFilters={this.showFilters}/>
         <div className="loginScreen">
           <h1>RENTR</h1>
           <LoginScreen handleChange={this.handleChange}
