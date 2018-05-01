@@ -26,6 +26,7 @@
 
 .menuBar {
     width: 100%;
+    overflow: auto;
 }
 
 .menuBar button {
@@ -81,7 +82,9 @@
     width: 40%;
     margin: 10px 5%;
     display: inline;
-    float: right;
+    float: left;
+
+    vertical-align: top;
 }
 
 /* Checkout Panel */
