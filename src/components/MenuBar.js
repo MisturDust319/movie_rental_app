@@ -38,7 +38,7 @@ function MenuBar(props) {
                 className='searchButton'/>
                 <Button label={toggleText()} onClick={props.showFilters} raised />
             </span>
-            <Button label="Logout" onClick={props.logout} raised 
+            <Button label={"Logout " + props.username} onClick={props.logout} raised 
             className='logoutButton'/>
         </header>
     );
@@ -48,7 +48,8 @@ MenuBar.PropTypes = {
     getValue: PropTypes.func.isRequired,
     handleChange: PropTypes.func.isRequired,
     searchMovies: PropTypes.func.isRequired,
-    logout: PropTypes.func.isRequired
+    logout: PropTypes.func.isRequired,
+    username: PropTypes.string.isRequired,
 }
 
 export { MenuBar };

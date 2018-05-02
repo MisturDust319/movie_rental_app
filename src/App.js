@@ -99,7 +99,8 @@ class App extends Component {
             getValue={this.getValue} 
             searchMovies={this.searchMovies}
             logout={this.logout}
-            showFilters={this.showFilters}/>
+            showFilters={this.showFilters}
+            username={this.state.username}/>
           </div>
         <div>
           <MovieCard id="12"
