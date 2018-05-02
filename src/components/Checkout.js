@@ -5,6 +5,12 @@ import PropTypes from 'prop-types';
 import Input from 'react-toolbox/lib/input';
 import Button from 'react-toolbox/lib/button/Button';
 import Drawer from 'react-toolbox/lib/drawer';
+import Dropdown from 'react-toolbox/lib/dropdown';
+
+const rentOptions = [
+    { value: 'hd', label: 'HD'},
+    { value: 'sd', label: 'SD'},
+];
 
 function Checkout(props) {
 
@@ -24,6 +30,7 @@ function Checkout(props) {
                 label='Card info' name='cardInfo'
                 value={props.getValue("cardInfo")}
                 onChange={props.handleChange.bind(this, 'cardInfo')} />
+            <Dropdown auto source={rentOptions} onChange={props.handleChange.bind(this, 'rentOptions')} value={props.getValue('rentOptions')} label="Rental Options" />
             <Button onClick={closeDialog} label="Checkout" raised/>
         </Drawer>
     );

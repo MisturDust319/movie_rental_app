@@ -32,6 +32,7 @@ class App extends Component {
       maxRating: 5,
       showCheckout: false,
       cardInfo: "",
+      rentOptions: "sd",
     }
 
     // bind functions

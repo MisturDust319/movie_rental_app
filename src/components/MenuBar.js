@@ -32,7 +32,7 @@ function MenuBar(props) {
             <span className='search'>
                 <Input type='text' label='Search' name='query' value={props.getValue("query")} onChange={props.handleChange.bind(this, 'query')} maxLength={30} 
                 className='searchBar'/>
-                <Dropdown auto onChange={props.handleChange.bind(this, 'searchBy')} source={searchOptions} value={props.getValue('searchBy')}
+                <Dropdown auto label="Search By" onChange={props.handleChange.bind(this, 'searchBy')} source={searchOptions} value={props.getValue('searchBy')}
                 className='searchBy'/>
                 <Button label="Search..." onClick={props.searchMovies} raised
                 className='searchButton'/>
