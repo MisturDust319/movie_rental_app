@@ -27,9 +27,9 @@ function MenuBar(props) {
     }
 
     return (
-        <header className='menuBar'>
+        <header className='menuBar clearfix'>
             <h1>RENTR</h1>
-            <span class='search'>
+            <span className='search'>
                 <Input type='text' label='Search' name='query' value={props.getValue("query")} onChange={props.handleChange.bind(this, 'query')} maxLength={30} 
                 className='searchBar'/>
                 <Dropdown auto onChange={props.handleChange.bind(this, 'searchBy')} source={searchOptions} value={props.getValue('searchBy')}
