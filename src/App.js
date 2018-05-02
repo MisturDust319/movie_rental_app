@@ -17,7 +17,7 @@ class App extends Component {
     this.state = {
       username: "",
       newUsername: "",
-      isLoggedIn: true,
+      isLoggedIn: false,
       query: "",
       searchBy: "title",
       showFilterPanel: false,
